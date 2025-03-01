@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeJournal - Daily Journal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="daily-journal.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (shared from existing design) -->
+        <nav class="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+            <h2>TradeJournal</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li class="active"><a href="daily-journal.html">Daily Journal</a></li>
+                <li><a href="#">Trade Log</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Zella Insights</a></li>
+                <li><a href="#">Strategies</a></li>
+                <li><a href="#">Notebook</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content for Daily Journal -->
+        <main class="main-content">
+            <header>
+                <h1>Daily Journal</h1>
+                <div class="header-actions">
+                    <button class="btn" id="addEntryBtn">+ Add Entry</button>
+                    <button class="btn">Import Entries</button>
+                    <select class="filter-dropdown">
+                        <option value="all">All Time</option>
+                        <option value="month">This Month</option>
+                        <option value="week">This Week</option>
+                    </select>
+                    <div class="date-range">
+                        Last update: Nov 21, 2023 03:50 PM | 01/24/2021 - 02/24/2021
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle">Toggle Dark Mode</button>
+                </div>
+            </header>
+
+            <section class="journal-content">
+                <div class="date-list">
+                    <h3>Log Days</h3>
+                    <ul id="dateList">
+                        <li><a href="#" data-date="2023-04-17">Mon, Apr 17, 2023</a></li>
+                        <li><a href="#" data-date="2023-03-21">Tue, Mar 21, 2023</a></li>
+                        <li><a href="#" data-date="2023-03-08">Wed, Mar 08, 2023</a></li>
+                        <li><a href="#" data-date="2023-02-04">Sat, Feb 04, 2023</a></li>
+                        <li><a href="#" data-date="2022-12-13">Tue, Dec 13, 2022</a></li>
+                        <li><a href="#" data-date="2022-08-30">Tue, Aug 30, 2022</a></li>
+                        <li><a href="#" data-date="2022-08-09">Tue, Aug 09, 2022</a></li>
+                        <li><a href="#" data-date="2022-07-29">Fri, Jul 29, 2022</a></li>
+                        <li><a href="#" data-date="2022-07-13">Wed, Jul 13, 2022</a></li>
+                        <li><a href="#" data-date="2022-05-17">Tue, May 17, 2022</a></li>
+                        <li><a href="#" data-date="2022-05-06">Fri, May 06, 2022</a></li>
+                    </ul>
+                </div>
+
+                <div class="journal-entry">
+                    <div class="summary">
+                        <h2 id="selectedDate">Mon, Apr 17, 2023</h2>
+                        <div class="summary-metrics">
+                            <p><strong>Net P&L:</strong> <span id="netPnl">-$554.67</span></p>
+                            <p><strong>Win Rate:</strong> <span id="winRate">60.00%</span></p>
+                            <p><strong>Total Trades:</strong> <span id="totalTrades">5</span></p>
+                            <p><strong>Winners:</strong> <span id="winners">3</span></p>
+                            <p><strong>Losers:</strong> <span id="losers">2</span></p>
+                            <p><strong>Volume:</strong> <span id="volume">530</span></p>
+                            <p><strong>Profit Factor:</strong> <span id="profitFactor">0.81</span></p>
+                            <p><strong>Gross P&L:</strong> <span id="grossPnl">-$382.02</span></p>
+                            <p><strong>Commissions:</strong> <span id="commissions">$172.65</span></p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dailyChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="notes-section">
+                        <h3>Notes</h3>
+                        <textarea id="journalNotes" placeholder="Enter market context, game plan, post-session thoughts, etc."></textarea>
+                        <button class="btn" id="saveNotesBtn">Save Notes</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="daily-journal.js"></script>
+</body>
+</html>

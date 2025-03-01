@@ -1,0 +1,136 @@
+.journal-content {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.date-list {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.date-list h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.date-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.date-list li {
+    margin: 10px 0;
+}
+
+.date-list a {
+    color: #1a1a2e;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.date-list a:hover, .date-list a.active {
+    color: #ff6b6b;
+}
+
+.journal-entry {
+    flex: 1;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.summary {
+    margin-bottom: 20px;
+}
+
+.summary h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.summary-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-metrics p {
+    font-size: 0.95em;
+    color: #333;
+}
+
+.chart-container {
+    position: relative;
+    height: 150px; /* Fixed height for the chart container */
+    width: 100%;
+    margin-top: 15px;
+}
+
+#dailyChart {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.notes-section {
+    margin-top: 20px;
+}
+
+.notes-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#journalNotes {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .date-list, body.dark-mode .journal-entry {
+    background-color: #2a2a3e;
+}
+
+body.dark-mode .date-list h3, body.dark-mode .journal-entry h2, body.dark-mode .journal-entry h3, body.dark-mode .summary-metrics p {
+    color: #e0e0e0;
+}
+
+body.dark-mode #journalNotes {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+@media (max-width: 768px) {
+    .journal-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .date-list {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .chart-container {
+        height: 100px; /* Smaller height on mobile */
+    }
+}
